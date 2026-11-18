@@ -1,0 +1,136 @@
+<style>
+  .panel-root {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .block {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .title {
+    color: #1c1d20;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .title:dark {
+    color: #fafaf7;
+  }
+
+  .subtitle {
+    color: #3a3b40;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .subtitle:dark {
+    color: #dddfe3;
+  }
+
+  .body {
+    color: #3a3b40;
+    font-size: 12px;
+  }
+
+  .body:dark {
+    color: #dddfe3;
+  }
+
+  .progress {
+    color: #0d6b3a;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .progress:dark {
+    color: #9af7c4;
+  }
+
+  .row {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .chip {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 8px;
+    background-color: #e6e7ea;
+  }
+
+  .chip:dark {
+    background-color: #2a2d33;
+  }
+
+  .chip-label {
+    color: #1c1d20;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .chip-label:dark {
+    color: #fafaf7;
+  }
+
+  .complete {
+    color: #0d6b3a;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .complete:dark {
+    color: #9af7c4;
+  }
+
+  .button {
+    justify-content: flex-start;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 10px;
+  }
+</style>
+<Panel class="panel-root">
+  <div id="intro" class="block">
+    <div class="title">FIX A BROKEN WORLD</div>
+    <div class="subtitle">RESTORE THE THREE ENERGY CRYSTALS</div>
+    <div class="body" id="instructions">Pinch or squeeze a crystal, then place it in the socket of the same color. A red flash means that socket rejected it. Begin to clear this card.</div>
+    <Button id="begin-button" class="button">
+      <ButtonLabel>Begin</ButtonLabel>
+    </Button>
+    <Button id="xr-button" class="button">
+      <ButtonIcon>
+        <RectangleGoggles></RectangleGoggles>
+      </ButtonIcon>
+      <ButtonLabel>Enter XR</ButtonLabel>
+    </Button>
+  </div>
+  <div id="hud" class="block" style="display: none">
+    <div class="title">FIX A BROKEN WORLD</div>
+    <div class="subtitle">RESTORE THE THREE ENERGY CRYSTALS</div>
+    <div class="progress" id="progress">0 / 3 CRYSTALS RESTORED</div>
+    <div class="row">
+      <div class="chip" id="ind-amber"><span class="chip-label">AMBER</span></div>
+      <div class="chip" id="ind-azure"><span class="chip-label">AZURE</span></div>
+      <div class="chip" id="ind-violet"><span class="chip-label">VIOLET</span></div>
+    </div>
+    <div class="complete" id="complete" style="display: none">The world is whole again.</div>
+    <Button id="hud-xr" class="button">
+      <ButtonIcon>
+        <RectangleGoggles></RectangleGoggles>
+      </ButtonIcon>
+      <ButtonLabel>Enter XR</ButtonLabel>
+    </Button>
+    <Button id="exit-button" class="button" style="display: none">
+      <ButtonLabel>Exit XR</ButtonLabel>
+    </Button>
+  </div>
+</Panel>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reverse Reality — Hands of Creation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/hud.css" />
+  </head>
+  <body data-mode="landing">
+    <div id="scene-container"></div>
+
+    <div id="landing">
+      <nav class="nav">
+        <a class="logo" href="#hero-section">REVERSE REALITY</a>
+        <div class="nav-links">
+          <a href="#hero-section" data-scroll="hero-section">EXPERIENCE</a>
+          <a href="#how" data-scroll="how">HOW IT WORKS</a>
+          <a href="#creations" data-scroll="creations">CREATIONS</a>
+        </div>
+      </nav>
+
+      <header class="hero" id="hero-section">
+        <div class="hero-copy">
+          <p class="label">AN IMMERSIVE GESTURE EXPERIENCE</p>
+          <h1>REVERSE REALITY</h1>
+          <p class="subtitle">HANDS OF CREATION</p>
+          <p class="lede">
+            Two hands create two different forms. The right hand builds geometry.
+            The left hand grows something living. Bring them together and they fuse
+            into one 3D masterpiece.
+          </p>
+          <div class="cta-row">
+            <button class="cta" type="button" data-start>START EXPERIENCE</button>
+            <a class="cta ghost" href="#how" data-scroll="how">DISCOVER HOW IT WORKS</a>
+          </div>
+          <p class="whisper">Use your hands. Shape your imagination.</p>
+        </div>
+        <div class="hero-stage">
+          <canvas id="hero-canvas"></canvas>
+          <div class="orb"></div>
+        </div>
+      </header>
+
+      <section id="how" class="section">
+        <p class="label">HOW IT WORKS</p>
+        <div class="stages">
+          <article>
+            <span>01</span>
+            <h3>Create with your right hand</h3>
+            <p>Pinch to choose a geometric form. Open your palm to confirm it.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Create with your left hand</h3>
+            <p>The left hand grows flowers, wings, hearts, and living structure.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Bring both hands together</h3>
+            <p>The two forms attract, ignite, and fuse into a single sculpture.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="worlds" class="section split">
+        <article class="glass geo">
+          <p class="label">RIGHT HAND</p>
+          <h2>Geometric world</h2>
+          <p>Cubes, spheres, pyramids, tori, icosahedra, and crystal polyhedra in cyan light.</p>
+        </article>
+        <article class="glass org">
+          <p class="label">LEFT HAND</p>
+          <h2>Organic world</h2>
+          <p>Flowers, butterflies, hearts, leaves, petals, and abstract living sculpture in violet.</p>
+        </article>
+      </section>
+
+      <section id="creations" class="section">
+        <p class="label">DISCOVER YOUR CREATION</p>
+        <h2>Possible masterpieces</h2>
+        <div class="gallery">
+          <article><h3>Geometric butterfly</h3><p>Wings cut from crystal.</p></article>
+          <article><h3>Crystal flower</h3><p>Petals around a geometric heart.</p></article>
+          <article><h3>Energy heart</h3><p>An organic pulse held in a lattice.</p></article>
+          <article><h3>Cosmic planet</h3><p>Living rings around a solid core.</p></article>
+          <article><h3>Abstract living sculpture</h3><p>A form that belongs to neither world alone.</p></article>
+        </div>
+      </section>
+
+      <section class="finale">
+        <h2>Ready to create something impossible?</h2>
+        <button class="cta" type="button" data-start>START EXPERIENCE</button>
+      </section>
+    </div>
+
+    <div id="intro-overlay" hidden>
+      <p id="intro-copy">Two hands. Two forms. One creation.</p>
+      <button id="camera-retry" type="button" hidden>Retry camera</button>
+    </div>
+
+    <div id="game-ui" hidden>
+      <header id="top-hud">
+        <div>
+          <p class="kicker" id="level-readout">Stage 01 · Geometric creation</p>
+          <h1>REVERSE REALITY</h1>
+          <p id="objective">Show both hands to begin</p>
+        </div>
+        <div class="stats">
+          <span>Right <strong id="right-status">Waiting</strong></span>
+          <span>Left <strong id="left-status">Waiting</strong></span>
+          <span>Fusion <strong id="fusion-status">Locked</strong></span>
+        </div>
+        <div class="hud-actions">
+          <button id="restart-game" type="button">Play again</button>
+          <button id="exit-landing" type="button">Exit</button>
+        </div>
+      </header>
+      <footer id="bottom-hud">
+        <span id="gesture-readout">Pinch to choose a form. Open palm to confirm.</span>
+        <strong id="masterpiece-name"></strong>
+      </footer>
+      <aside id="camera-panel">
+        <div class="camera-head">
+          <span id="camera-lamp" data-live="no"></span>
+          <strong>Hands</strong>
+        </div>
+        <div class="camera-stage">
+          <video id="webcam" autoplay playsinline muted></video>
+          <canvas id="hand-overlay"></canvas>
+        </div>
+        <p id="camera-status">Camera off</p>
+        <p id="calibration-hint">Hold both hands in front of the camera, about shoulder width. Bring them together to fuse.</p>
+      </aside>
+      <section id="finale-screen" hidden>
+        <p class="congrats">CONGRATULATIONS!</p>
+        <h2 id="finale-name"></h2>
+        <p id="finale-parents"></p>
+        <p id="finale-blurb"></p>
+        <div class="finale-actions">
+          <button id="create-again" type="button">CREATE AGAIN</button>
+          <button id="save-creation" type="button">SAVE CREATION</button>
+          <button id="back-home" type="button">BACK TO HOME</button>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>
