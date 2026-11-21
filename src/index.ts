@@ -5,6 +5,7 @@ import { startHandCamera, stopHandCamera } from './hand-camera.js';
 import { handInput } from './hand-input.js';
 import { startLandingHero, stopLandingHero } from './landing-hero.js';
 import { PanelSystem } from './panel.js';
+import './story-studio.js';
 
 const landing = document.getElementById('landing');
 const gameUi = document.getElementById('game-ui');

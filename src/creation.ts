@@ -12,6 +12,7 @@ import {
 } from '@iwsdk/core';
 import { CreationPhases, CreationStage } from './creation-components.js';
 import { handInput, type HandSample } from './hand-input.js';
+import { requestAi } from './ai-client.js';
 import {
   buildFusion,
   buildGeometric,
@@ -259,7 +260,16 @@ export class CreationSystem extends createSystem({
     this.fusion.position.set(0, CENTER_Y, CENTER_Z);
     this.fusion.scale.setScalar(FUSION_SCALE);
     this.revealed = true;
+    const geometric = GEO_NAMES[rightForm] ?? 'Cube';
+    const organic = ORG_NAMES[leftForm] ?? 'Butterfly';
     this.showFinale(fusionName(rightForm, leftForm), fusionDescription(rightForm, leftForm));
+    void requestAi('masterpiece', { geometric, organic })
+      .then((result) => {
+        const name = typeof result.name === 'string' ? result.name : fusionName(rightForm, leftForm);
+        const description = typeof result.description === 'string' ? result.description : fusionDescription(rightForm, leftForm);
+        this.showFinale(name, description);
+      })
+      .catch(() => undefined);
   }
 
   update(delta: number): void {

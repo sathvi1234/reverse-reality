@@ -19,6 +19,7 @@
           <a href="#hero-section" data-scroll="hero-section">EXPERIENCE</a>
           <a href="#how" data-scroll="how">HOW IT WORKS</a>
           <a href="#creations" data-scroll="creations">CREATIONS</a>
+          <a href="#story-studio" data-scroll="story-studio">STORY STUDIO</a>
         </div>
       </nav>
 
@@ -88,6 +89,37 @@
           <article><h3>Cosmic planet</h3><p>Living rings around a solid core.</p></article>
           <article><h3>Abstract living sculpture</h3><p>A form that belongs to neither world alone.</p></article>
         </div>
+      </section>
+
+      <section id="story-studio" class="section">
+        <p class="label">STORY STUDIO</p>
+        <h2>Turn a fusion into a character and a short story.</h2>
+        <form id="story-form">
+          <label>Geometric form <input id="story-geo" value="Crystal" maxlength="40" /></label>
+          <label>Organic form <input id="story-org" value="Butterfly" maxlength="40" /></label>
+          <label>Genre
+            <select id="story-genre">
+              <option>Fantasy</option>
+              <option>Adventure</option>
+              <option>Science fiction</option>
+              <option>Mystery</option>
+              <option>Mythology</option>
+            </select>
+          </label>
+          <label>World
+            <select id="story-world">
+              <option>Enchanted Forest</option>
+              <option>Cosmic Universe</option>
+              <option>Underwater Kingdom</option>
+              <option>Cyberpunk City</option>
+              <option>Fantasy Kingdom</option>
+              <option>Dream World</option>
+            </select>
+          </label>
+          <button class="cta" type="submit">GENERATE STORY</button>
+        </form>
+        <p id="story-status">Stories are requested from the server. The camera stays off until START EXPERIENCE.</p>
+        <article id="story-output" hidden></article>
       </section>
 
       <section class="finale">

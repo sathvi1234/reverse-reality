@@ -10,6 +10,7 @@ dist/
 .env
 .env.local
 .env.production
+data/
 
 # IDE and OS files
 .vscode/*
@@ -47,3 +48,5 @@ pids/
 .cursor/mcp.json
 .vscode/mcp.json
 .codex/config.toml
+
+.vercel
